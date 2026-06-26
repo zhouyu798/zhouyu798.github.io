@@ -1,0 +1,31 @@
+import { motion } from "framer-motion";
+
+export default function ImageGallery({ images }) {
+  return (
+    <div className="space-y-8">
+      {images.map((item, index) => (
+        <motion.figure
+          key={item.src}
+          className="group overflow-hidden rounded-system border border-line bg-white p-3 shadow-card"
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.18 }}
+          transition={{ duration: 0.65, delay: Math.min(index * 0.03, 0.18) }}
+        >
+          <div className="overflow-hidden rounded-[28px] bg-soft">
+            <img
+              src={item.src}
+              alt={item.caption}
+              loading="lazy"
+              decoding="async"
+              className="w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+            />
+          </div>
+          <figcaption className="px-3 py-4 text-sm leading-7 text-muted">
+            {item.caption}
+          </figcaption>
+        </motion.figure>
+      ))}
+    </div>
+  );
+}
