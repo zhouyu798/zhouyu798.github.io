@@ -15,13 +15,13 @@ export default function Home() {
     <motion.main
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
     >
       <Navbar />
       <Hero />
       <Experience />
-      <section id="work" className="content-auto px-5 py-24 lg:py-32">
+
+      <section id="work" className="px-5 py-24 lg:py-32">
         <div className="mx-auto max-w-canvas">
           <SectionHeader
             eyebrow="Selected Works"
@@ -35,7 +35,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="strengths" className="content-auto px-5 py-24 lg:py-32">
+
+      <section id="strengths" className="px-5 py-24 lg:py-32">
         <div className="mx-auto max-w-canvas">
           <SectionHeader
             eyebrow="Strengths"
@@ -49,6 +50,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <ContactSection />
       <Footer />
     </motion.main>

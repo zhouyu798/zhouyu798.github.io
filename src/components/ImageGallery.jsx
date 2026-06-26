@@ -7,10 +7,10 @@ export default function ImageGallery({ images }) {
         <motion.figure
           key={item.src}
           className="group overflow-hidden rounded-system border border-line bg-white p-3 shadow-card"
-          initial={{ opacity: 0, y: 36 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.65, delay: Math.min(index * 0.03, 0.18) }}
+          viewport={{ once: true, margin: "-10% 0px" }}
+          transition={{ duration: 0.7, delay: Math.min(index * 0.04, 0.22), ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="overflow-hidden rounded-[28px] bg-soft">
             <img

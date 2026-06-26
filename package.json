@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "dev:lan": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node scripts/create-spa-fallback.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "preview:lan": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "framer-motion": "^11.18.2",
+    "framer-motion": "^12.42.0",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

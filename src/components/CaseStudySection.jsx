@@ -4,14 +4,14 @@ export default function CaseStudySection({ id, title, children }) {
   return (
     <motion.section
       id={id}
-      className="scroll-mt-28 border-t border-line py-12"
-      initial={{ opacity: 0, y: 30 }}
+      className="scroll-mt-28 border-b border-line py-12 last:border-b-0 md:py-16"
+      initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.65 }}
+      viewport={{ once: true, margin: "-10% 0px" }}
+      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
     >
-      <h2 className="mb-6 text-3xl font-bold text-ink">{title}</h2>
-      <div className="case-content">{children}</div>
+      <h2 className="text-3xl font-bold text-ink md:text-4xl">{title}</h2>
+      <div className="case-content mt-7">{children}</div>
     </motion.section>
   );
 }

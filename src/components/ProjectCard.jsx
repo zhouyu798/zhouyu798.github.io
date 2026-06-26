@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 export default function ProjectCard({ project }) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.65 }}
+      viewport={{ once: true, margin: "-8% 0px" }}
       whileHover={{ y: -6 }}
+      transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       className="group"
     >
       <Link to={`/projects/${project.slug}`} className="glass-card block h-full overflow-hidden p-6 md:p-8">
@@ -24,6 +24,7 @@ export default function ProjectCard({ project }) {
             <ArrowUpRight size={20} />
           </span>
         </div>
+
         <div className="mt-8">
           <h3 className="text-2xl font-bold leading-tight text-ink md:text-3xl">
             {project.title}
@@ -31,6 +32,7 @@ export default function ProjectCard({ project }) {
           <p className="mt-3 text-sm font-semibold text-harmony">{project.english}</p>
           <p className="mt-5 text-base leading-8 text-muted">{project.description}</p>
         </div>
+
         <div className="mt-6 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span key={tag} className="rounded-full bg-soft px-3 py-2 text-xs font-semibold text-muted">
@@ -38,6 +40,7 @@ export default function ProjectCard({ project }) {
             </span>
           ))}
         </div>
+
         <div className="mt-8 overflow-hidden rounded-[28px] border border-line bg-soft">
           <img
             src={project.cover}
